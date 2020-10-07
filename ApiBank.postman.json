@@ -1,0 +1,305 @@
+{
+	"info": {
+		"_postman_id": "de5dd69f-b8f2-4455-b81f-0adf2a0d9ee4",
+		"name": "ApiBank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createProposal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Girlaine\",\r\n    \"sobrenome\": \"Neves\",\r\n    \"email\": \"\",\r\n    \"cpf\": \"\",\r\n    \"dataNascimento\": \"1990-12-11\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8180/proposal",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8180",
+					"path": [
+						"proposal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addAddress",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cep\": \"04045-000\",\r\n    \"rua\": \"Rua xxx\",\r\n    \"bairro\": \"bairro teste\",\r\n    \"complemento\": \"apto\",\r\n    \"cidade\": \"rio\",\r\n    \"estado\": \"rj\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8180/proposal/:id/address",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8180",
+					"path": [
+						"proposal",
+						":id",
+						"address"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "4610cfa4-2563-4fc2-8866-c85a039b4959"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addDocument",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "frente",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "verso",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8180/proposal/:id/document",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8180",
+					"path": [
+						"proposal",
+						":id",
+						"document"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "4610cfa4-2563-4fc2-8866-c85a039b4959"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProposal",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8180/proposal/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8180",
+					"path": [
+						"proposal",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "8c3a6082-f40f-491b-80a9-a1508d55b5d2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "confirmProposal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8180/proposal/:id/confirm?acepted=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8180",
+					"path": [
+						"proposal",
+						":id",
+						"confirm"
+					],
+					"query": [
+						{
+							"key": "acepted",
+							"value": "true"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "4610cfa4-2563-4fc2-8866-c85a039b4959"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createToken",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"\",\r\n    \"cpf\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8180/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8180",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createPassword",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"senha\": \"kjJ@1099\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8180/login/:token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8180",
+					"path": [
+						"login",
+						":token"
+					],
+					"variable": [
+						{
+							"key": "token",
+							"value": "phzvi9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "authentication",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"\",\r\n    \"senha\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8180/login/authentication",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8180",
+					"path": [
+						"login",
+						"authentication"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "doTransaction",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJESUdJVEFMX0JBTktfSldUIiwic3ViIjoiZ2kubmRhemV2ZWRvQGdtYWlsLmNvbSIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2MDIxMDkzMDUsImV4cCI6MTYwMjEwOTkwNX0.zEIjTiVtrzuozabA73JPuqKFbreMS76ugQ9E4R69JIK6kECuuO1b1p4mH9mXo9dmsJkFUVpdayZfpSYWJYjVWQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"agencia\": \"1126\",\r\n  \"bancoCod\": \"123\",\r\n  \"bancoNome\": \"Voto\",\r\n  \"conta\": \"12345678\",\r\n  \"descricao\": \"transferencia\",\r\n  \"documento\": \"123456789\",\r\n  \"favoritar\": true,\r\n  \"nome\": \"Girlaine\",\r\n  \"tipoConta\": \"POUPANCA\",\r\n  \"valor\": 100.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8180/transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8180",
+					"path": [
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
